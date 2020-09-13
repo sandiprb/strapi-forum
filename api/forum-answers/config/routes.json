@@ -1,0 +1,60 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/forum-answers",
+      "handler": "forum-answers.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/forum-answers/count",
+      "handler": "forum-answers.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/forum-answers/:id",
+      "handler": "forum-answers.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/forum-answers",
+      "handler": "forum-answers.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/forum-answers/:id",
+      "handler": "forum-answers.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/forum-answers/:id/like/",
+      "handler": "forum-answers.like",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/forum-answers/:id/dislike/",
+      "handler": "forum-answers.dislike",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

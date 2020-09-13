@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_answer_comments",
+  "info": {
+    "name": "Forum Answer Comments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "content": {
+      "type": "text"
+    },
+    "author": {
+      "via": "forum_answer_comments",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": true
+    },
+    "answer": {
+      "via": "comments",
+      "model": "forum-answers"
+    },
+    "likedBy": {
+      "via": "liked_forum_comments",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_questions",
+  "info": {
+    "name": "Forum Question"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "viewsCount": {
+      "type": "biginteger",
+      "default": "0"
+    },
+    "likedBy": {
+      "via": "forum_question_likes",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": true
+    },
+    "isSpam": {
+      "type": "boolean",
+      "default": false
+    },
+    "author": {
+      "via": "forum_questions",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "answers": {
+      "collection": "forum-answers",
+      "via": "question"
+    }
+  }
+}

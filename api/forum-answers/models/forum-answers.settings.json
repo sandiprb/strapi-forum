@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "forum_answers",
+  "info": {
+    "name": "Forum Answers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "isPublished": {
+      "type": "boolean",
+      "default": true
+    },
+    "author": {
+      "via": "forum_answers",
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "likedBy": {
+      "via": "liked_forum_answers",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    },
+    "comments": {
+      "collection": "forum-answer-comments",
+      "via": "answer"
+    },
+    "question": {
+      "via": "answers",
+      "model": "forum-question"
+    }
+  }
+}
