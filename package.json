@@ -12,7 +12,7 @@
   "devDependencies": {},
   "dependencies": {
     "hashids": "^2.2.1",
-    "knex": "<0.20.0",
+    "knex": "<2.5.0",
     "sqlite3": "latest",
     "strapi": "3.1.1",
     "strapi-admin": "3.1.1",
